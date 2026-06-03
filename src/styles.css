@@ -66,7 +66,9 @@ body { background: #0e0e0e; padding: 20px; font-family: var(--cp); color: #ddd; 
 #art-note { width: 100%; font-size: 0.62rem; color: #555; border-top: 1px solid #222; padding-top: 8px; }
 
 /* ---- card grid ---- */
-#card-grid { display: grid; grid-template-columns: repeat(4, var(--card-w)); gap: 4mm; justify-content: center; }
+/* auto-fill so columns wrap to fit the viewport (4-up on desktop, fewer on
+   phones) instead of overflowing off-screen on narrow/iOS displays. */
+#card-grid { display: grid; grid-template-columns: repeat(auto-fill, var(--card-w)); gap: 4mm; justify-content: center; }
 .card-wrap { width: var(--card-w); height: var(--card-h); position: relative; }
 .card-svg { display: block; width: var(--card-w); height: var(--card-h); border-radius: 1.5mm; }
 .card { width: var(--card-w); height: var(--card-h); position: relative; overflow: hidden; border-radius: 1.5mm; }
@@ -116,3 +118,35 @@ body { background: #0e0e0e; padding: 20px; font-family: var(--cp); color: #ddd; 
 .r-repair { font-size: 11pt; font-weight: 700; color: #faf0f0; letter-spacing: -0.10em; opacity: 0.85; margin-bottom: 1.4mm; white-space: nowrap; }
 .r-det { font-size: 7.5pt; color: #faf0f0; line-height: 1.1; letter-spacing: -0.10em; word-spacing: -0.08em; }
 .r-det b { font-weight: 700; }
+
+/* ---- legal / attribution footer ---- */
+#legal {
+  margin: 40px auto 16px;
+  max-width: 820px;
+  padding: 18px 20px;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  background: #141414;
+  color: #9a9a9a;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+#legal h2 {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c0392b;
+  margin-bottom: 8px;
+}
+#legal p { margin-bottom: 8px; }
+#legal p:last-child { margin-bottom: 0; }
+#legal strong { color: #cfcfcf; }
+
+/* ---- small-screen / iOS ---- */
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  #card-grid { gap: 3mm; }
+  #controls h1 { flex-basis: 100%; }
+  #legal { margin-top: 28px; padding: 14px 14px; }
+}
