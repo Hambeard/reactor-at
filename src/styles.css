@@ -1,3 +1,7 @@
+/* Self-hosted font (vendored woff2) — no external request, works offline. */
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 400; font-display: swap; src: url('vendor/courier-prime-400.woff2') format('woff2'); }
+@font-face { font-family: 'Courier Prime'; font-style: normal; font-weight: 700; font-display: swap; src: url('vendor/courier-prime-700.woff2') format('woff2'); }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --card-w: 45mm; --card-h: 65mm;

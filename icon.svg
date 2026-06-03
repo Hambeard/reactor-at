@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="AT Cards">
+  <rect width="512" height="512" fill="#0b0e11"/>
+  <!-- maskable safe zone ~ center 80% -->
+  <g stroke="#4ecdc4" stroke-width="22" stroke-linecap="round" fill="none">
+    <!-- vertical stem -->
+    <line x1="256" y1="150" x2="256" y2="380"/>
+    <!-- upper crossbar -->
+    <line x1="150" y1="170" x2="362" y2="170"/>
+    <!-- second smaller crossbar -->
+    <line x1="190" y1="230" x2="322" y2="230"/>
+  </g>
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#4ecdc4" stroke-width="10" opacity="0.45"/>
+</svg>

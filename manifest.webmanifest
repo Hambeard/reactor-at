@@ -1,0 +1,14 @@
+{
+  "name": "Adeptus Titanicus — Weapon Cards",
+  "short_name": "AT Cards",
+  "description": "Build and print customisable Adeptus Titanicus weapon cards. Works offline.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0e11",
+  "theme_color": "#0b0e11",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

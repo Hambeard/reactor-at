@@ -187,4 +187,12 @@ async function init() {
   renderCards();
 }
 
+// Register service worker for offline use. Relative path → scope = app dir,
+// so it works under a GitHub Pages sub-path. Failures are non-fatal.
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch((e) => console.warn("SW registration failed", e));
+  });
+}
+
 init();
