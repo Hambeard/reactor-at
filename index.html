@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adeptus Titanicus — Weapon Cards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <!-- Global glow filters, referenced by name text in every card SVG -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="glow-teal" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b1"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.4" result="b2"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6.5" result="b3"/>
+        <feFlood flood-color="rgba(78,205,196,0.9)" result="c1"/><feComposite in="c1" in2="b1" operator="in" result="g1"/>
+        <feFlood flood-color="rgba(78,205,196,0.6)" result="c2"/><feComposite in="c2" in2="b2" operator="in" result="g2"/>
+        <feFlood flood-color="rgba(78,205,196,0.3)" result="c3"/><feComposite in="c3" in2="b3" operator="in" result="g3"/>
+        <feMerge><feMergeNode in="g3"/><feMergeNode in="g2"/><feMergeNode in="g1"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glow-red" x="-60%" y="-60%" width="220%" height="220%" color-interpolation-filters="sRGB">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b1"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="b2"/>
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6.5" result="b3"/>
+        <feFlood flood-color="rgba(255,136,136,0.9)" result="c1"/><feComposite in="c1" in2="b1" operator="in" result="g1"/>
+        <feFlood flood-color="rgba(255,60,60,0.6)" result="c2"/><feComposite in="c2" in2="b2" operator="in" result="g2"/>
+        <feFlood flood-color="rgba(204,0,0,0.4)" result="c3"/><feComposite in="c3" in2="b3" operator="in" result="g3"/>
+        <feMerge><feMergeNode in="g3"/><feMergeNode in="g2"/><feMergeNode in="g1"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <div id="controls">
+    <h1>Adeptus Titanicus — Weapon Cards</h1>
+    <select id="export-mode" title="Print layout">
+      <option value="interleaved">Interleaved pairs</option>
+      <option value="separated">Active / Disabled sheets</option>
+    </select>
+    <button id="btn-export" class="ctrl-btn">Export PDF</button>
+    <span id="export-status"></span>
+  </div>
+
+  <section id="art-panel">
+    <div class="art-slot">
+      <h2>Active side (blue)</h2>
+      <div class="row">
+        <input type="file" accept="image/*" data-upload="active">
+        <button class="btn-reset" data-reset="active">Reset</button>
+        <span class="art-status" data-status="active">Default artwork</span>
+      </div>
+      <div class="art-warn" data-warn="active"></div>
+    </div>
+    <div class="art-slot">
+      <h2>Disabled side (red)</h2>
+      <div class="row">
+        <input type="file" accept="image/*" data-upload="disabled">
+        <button class="btn-reset" data-reset="disabled">Reset</button>
+        <span class="art-status" data-status="disabled">Default artwork</span>
+      </div>
+      <div class="art-warn" data-warn="disabled"></div>
+      <label class="art-toggle"><input type="checkbox" id="toggle-disabled-text" checked> Show &ldquo;WEAPON DISABLED&rdquo; text</label>
+    </div>
+    <p id="art-note">Upload artwork you have the rights to use. Images stay on this device (stored locally in your browser) and are only embedded into PDFs you export — nothing is uploaded to a server.</p>
+  </section>
+
+  <div id="tab-bar">
+    <button class="tab-btn active" data-tab="cards">Cards</button>
+    <button class="tab-btn" data-tab="editor">Edit Data</button>
+  </div>
+
+  <div id="filter-bar">
+    <span>Titan:</span>
+    <button class="filter-btn active" data-titan="All">All</button>
+    <button class="filter-btn" data-titan="Warmaster">Warmaster</button>
+    <button class="filter-btn" data-titan="Warlord">Warlord</button>
+    <button class="filter-btn" data-titan="Warbringer">Warbringer</button>
+    <button class="filter-btn" data-titan="Reaver">Reaver</button>
+    <button class="filter-btn" data-titan="Dire Wolf">Dire Wolf</button>
+    <button class="filter-btn" data-titan="Warhound">Warhound</button>
+  </div>
+
+  <div id="tab-cards"><div id="card-grid"></div></div>
+
+  <div id="tab-editor" hidden>
+    <div id="editor-wrap">
+      <table id="editor-table">
+        <thead id="editor-head"></thead>
+        <tbody id="editor-body"></tbody>
+      </table>
+    </div>
+    <div id="editor-actions">
+      <button id="add-weapon" class="ed-add">+ Add Weapon</button>
+      <button id="export-set" class="ed-add">⤓ Export Set (JSON)</button>
+      <button id="import-set" class="ed-add">⤒ Import Set</button>
+      <input type="file" id="import-file" accept="application/json,.json" hidden>
+      <button id="reset-all" class="ed-resetall">↺ Reset All to Defaults</button>
+    </div>
+  </div>
+
+  <script src="src/vendor/jspdf.umd.min.js"></script>
+  <script src="src/vendor/svg2pdf.umd.min.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

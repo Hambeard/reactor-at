@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="867" viewBox="0 0 450 650" preserveAspectRatio="xMinYMin meet">
+  <defs>
+    <radialGradient id="bgR" cx="50%" cy="46%" r="75%">
+      <stop offset="0%"   stop-color="#8a1a18"/>
+      <stop offset="45%"  stop-color="#5a0e0f"/>
+      <stop offset="100%" stop-color="#240606"/>
+    </radialGradient>
+    <linearGradient id="vignR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="16%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="84%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.48"/>
+    </linearGradient>
+    <radialGradient id="edgeR" cx="50%" cy="46%" r="62%">
+      <stop offset="62%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.42"/>
+    </radialGradient>
+    <!-- heavy grunge: fractal noise darkening the field -->
+    <filter id="grimeR" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="4" seed="11" result="n"/>
+      <feColorMatrix in="n" type="matrix"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0" result="dark"/>
+      <feComposite in="dark" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="speckR" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="4" result="n"/>
+      <feColorMatrix in="n" type="matrix"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 -0.32" result="s"/>
+      <feComposite in="s" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- field -->
+  <rect width="450" height="650" fill="url(#bgR)"/>
+
+  <!-- hazard chevrons, faint, behind -->
+  <g opacity="0.06" fill="#ffb3a0">
+    <polygon points="0,300 60,300 0,360"/>
+    <polygon points="90,300 150,300 90,360 30,360"/>
+    <polygon points="180,300 240,300 180,360 120,360"/>
+    <polygon points="270,300 330,300 270,360 210,360"/>
+    <polygon points="360,300 420,300 360,360 300,360"/>
+    <polygon points="450,300 450,360 390,360"/>
+  </g>
+
+  <!-- broken reactor ring (breach motif) -->
+  <g transform="translate(225 318)" fill="none" stroke="#ff8a7a" opacity="0.12">
+    <path d="M 0 -120 A 120 120 0 1 1 -78 92" stroke-width="2.4"/>
+    <path d="M 0 -96 A 96 96 0 1 0 70 66" stroke-width="1.6"/>
+    <g stroke-width="1.6">
+      <line x1="0" y1="0" x2="-104" y2="60"/>
+      <line x1="0" y1="0" x2="96" y2="72"/>
+      <line x1="0" y1="0" x2="20" y2="-118"/>
+      <line x1="0" y1="0" x2="-118" y2="-22"/>
+    </g>
+    <circle cx="0" cy="0" r="14" stroke-width="2"/>
+  </g>
+
+  <!-- jagged cracks across the surface -->
+  <g stroke="#1a0202" stroke-width="2" opacity="0.5" fill="none" stroke-linejoin="round">
+    <polyline points="70,60 120,150 95,210 160,300 130,390 190,470 165,560"/>
+    <polyline points="380,80 340,160 375,250 320,330 360,430 310,520"/>
+  </g>
+  <g stroke="#ff9b8a" stroke-width="0.6" opacity="0.10" fill="none">
+    <polyline points="70,60 120,150 95,210 160,300 130,390 190,470 165,560"/>
+    <polyline points="380,80 340,160 375,250 320,330 360,430 310,520"/>
+  </g>
+
+  <!-- grunge passes -->
+  <rect width="450" height="650" filter="url(#grimeR)" opacity="0.4"/>
+  <rect width="450" height="650" filter="url(#speckR)" opacity="0.42"/>
+
+  <!-- vignettes + inner frame -->
+  <rect width="450" height="650" fill="url(#edgeR)"/>
+  <rect width="450" height="650" fill="url(#vignR)"/>
+  <rect x="9" y="9" width="432" height="632" rx="6" fill="none" stroke="#ff8a7a" stroke-width="1" stroke-opacity="0.3"/>
+</svg>

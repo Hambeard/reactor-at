@@ -1,0 +1,22 @@
+# OS / editor cruft
+.DS_Store
+*.swp
+
+# Backups / scratch
+*.bak
+*.bak2
+*.bak3
+/tmp/
+
+# Third-party / GW source material — reference only, do NOT distribute
+adeptustitanicus_*.pdf
+Broncofishs-*.pdf
+Adeptus Titanicus 2018.txt
+AT-weapon-cards-v6.html
+
+# Raw data-extraction artifacts (large, regenerable)
+data-audit/
+
+# Original mockup PNGs (superseded by art/*.svg)
+AT-weapon-card-blue.png
+AT-weapon-card-red.png
