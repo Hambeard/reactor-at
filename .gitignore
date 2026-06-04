@@ -2,8 +2,8 @@
 .DS_Store
 *.swp
 
-# Per-machine local config (not for the repo)
-.claude/settings.local.json
+# Local Claude/dev tooling (preview config, per-machine settings)
+.claude/
 
 # Backups / scratch
 *.bak
