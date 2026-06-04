@@ -1,6 +1,6 @@
 // Service worker: offline app shell. Bump CACHE when any listed asset changes
 // so clients fetch fresh copies (old caches are purged on activate).
-const CACHE = "at-cards-v2";
+const CACHE = "at-cards-v3";
 
 // Paths are relative to the SW scope (the directory this file is served from),
 // so the app works under a sub-path like https://user.github.io/repo/.
