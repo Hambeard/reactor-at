@@ -126,7 +126,11 @@ export async function exportPdf({ weapons, artActive, artDisabled, showDisabledT
   });
 
   let seq;
-  if (mode === "separated") seq = [...blues, ...reds];
+  // splitAt: index where the disabled (red) section starts. In separated mode
+  // the reds must begin on a fresh page (page layout restarts there), not run
+  // straight on from the blues' last partial page.
+  let splitAt = Infinity;
+  if (mode === "separated") { seq = [...blues, ...reds]; splitAt = blues.length; }
   else { seq = []; for (let i = 0; i < blues.length; i++) { seq.push(blues[i]); seq.push(reds[i]); } }
 
   // Rasterize in concurrent batches: each card carries a 180ms font-apply delay,
@@ -139,8 +143,10 @@ export async function exportPdf({ weapons, artActive, artDisabled, showDisabledT
     const pngs = await Promise.all(chunk.map((s) => rasterize(s)));
     for (let j = 0; j < pngs.length; j++) {
       const i = base + j;
-      if (i > 0 && i % PER === 0) doc.addPage();
-      const slot = i % PER, r = Math.floor(slot / COLS), col = slot % COLS;
+      // section-local index: reds (i >= splitAt) restart their own page layout
+      const local = i < splitAt ? i : i - splitAt;
+      if (i > 0 && local % PER === 0) doc.addPage();   // new page on fill OR at the blue->red split
+      const slot = local % PER, r = Math.floor(slot / COLS), col = slot % COLS;
       const x = MX + col * CW, y = MY + r * CH;
       doc.addImage(pngs[j], "PNG", x, y, CW, CH);
       cropMarks(doc, x, y);
