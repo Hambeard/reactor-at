@@ -197,8 +197,11 @@ export function redCardSVG(w, art, idx, showDisabledText = true) {
     ${T(W / 2, 44, w.mount.toUpperCase(), { size: 7, fill: cream, opacity: 0.85, ls: -1, filter: "url(#glow-red)" })}
     ${nameBlock(name, W / 2, 122, cream, "url(#glow-red)")}
 
-    ${showDisabledText ? `${T(W / 2, 300, "WEAPON", { size: 17, fill: cream, ls: -1, filter: "url(#glow-red)" })}
-    ${T(W / 2, 346, "DISABLED", { size: 17, fill: cream, ls: -1, filter: "url(#glow-red)" })}` : ""}
+    ${showDisabledText ? (() => {
+      const disY = 320;  // top of "WEAPON" (units = 0.1mm). Raise/lower to taste; "DISABLED" follows 46 below.
+      return `${T(W / 2, disY, "WEAPON", { size: 17, fill: cream, ls: -1, filter: "url(#glow-red)" })}
+    ${T(W / 2, disY + 46, "DISABLED", { size: 17, fill: cream, ls: -1, filter: "url(#glow-red)" })}`;
+    })() : ""}
 
     ${T(W / 2, 486, "Repair Weapon {" + w.repair + "}", { size: 11, fill: cream, opacity: 0.95, ls: -1, filter: "url(#glow-red)" })}
     ${T(W / 2, 586, w.detA, { size: detPt(w.detA), fill: cream, ls: -0.4 })}
