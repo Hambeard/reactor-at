@@ -1,46 +1,43 @@
 titan,name,arc,mount,pts,sRange,lRange,sAcc,lAcc,dice,str,traits,disabled,repair,detA,detB,qty
 Warlord,Apocalypse Missile Launchers,CORRIDOR,Warlord Carapace,15,"30""","120""",—,+1,10,4,"Barrage, Carapace, Paired",11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Warlord,Arioch Titan Power Claw,FRONT,Warlord Arm,25,"2""",—,+2,—,3,12,"Concussive, Melee",11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Warlord,Bellicosa Volcano Cannon,FRONT,Warlord Arm,55,"30""","60""",—,—,1,12,"Blast 5"", Draining",11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Warlord,Conversion Beam Extirpator,FRONT,Warlord Arm,60,"25""","50""",—,—,2,10/12*,"Draining (long), Maximal Fire (long)",11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
+Warlord,Arioch Titan Power Claw,FRONT,Warlord Arm,25,"2""",—,+2,—,3,12,"Concussive, Melee",11,2+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
+Warlord,Bellicosa Volcano Cannon,FRONT,Warlord Arm,55,"30""","60""",—,—,1,12,"Blast (5""), Draining",11,5+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
+Warlord,Conversion Beam Extirpator,FRONT,Warlord Arm,60,"25""","50""*",—,—,2,10/12*,"Draining*, Maximal Fire*",11,5+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
 Warlord,Graviton Ruinator,FRONT,Warlord Arm,30,"22""","45""",—,—,2,10,"Concussive, Rending",11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
 Warlord,Macro-Gatling Blaster,FRONT,Warlord Arm,30,"8""","24""",+1,—,6,7,Ordnance,11,3+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Warlord,Mori Quake Cannon,FRONT,Warlord Arm,20,"24""","72""",-1,—,1,9,"Blast 5"", Concussive, Quake",11,3+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
+Warlord,Mori Quake Cannon,FRONT,Warlord Arm,20,"24""","72""",-1,—,1,9,"Blast (5""), Concussive, Quake",11,3+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
 Warlord,Paired Gatling Blasters,CORRIDOR,Warlord Carapace,30,"8""","24""",+1,—,12,5,"Carapace, Paired, Ordnance",11,3+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
 Warlord,Paired Laser Blasters,CORRIDOR,Warlord Carapace,50,"16""","32""",—,-1,6,8,"Carapace, Paired, Shieldbane (Draining)",11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
 Warlord,Paired Turbo Laser Destructors,CORRIDOR,Warlord Carapace,35,"18""","32""",—,—,4,8,"Carapace, Paired, Shieldbane (Draining)",11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Warlord,Sunfury Plasma Annihilator,FRONT,Warlord Arm,45,"12""","24""",—,—,4,8,Maximal Fire,11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
+Warlord,Sunfury Plasma Annihilator,FRONT,Warlord Arm,45,"12""","24""",—,—,4,8,Maximal Fire,11,5+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
 Warlord,Volkite Destructor,FRONT,Warlord Arm,40,"16""","24""",—,—,3,6,"Voidbreaker (2), Beam (1) (Draining)",11,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
 Warlord,Vulcan Mega-Bolter Array,CORRIDOR,Warlord Carapace,20,"10""","20""",+1,—,12,4,"Carapace, Paired, Rapid",11,3+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Apocalypse Missile Launcher,OMNI,Reaver Carapace,10,"30""","120""",—,+1,5,4,"Barrage, Carapace",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Chasmata Laser Blaster,FRONT,Reaver Arm,40,"22""","35""",—,-1,3,8,,10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Conversion Beam Dissolutor,OMNI,Reaver Carapace,25,"20""","40""",—,—,2,9/11*,Draining (long),10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Gatling Blaster,FRONT,Reaver Arm,15,"8""","24""",+1,—,6,5,Ordnance,10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Graviton Destructor,OMNI,Reaver Carapace,20,"18""","38""",—,—,1,9,"Carapace, Concussive, Rending",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Laser Blaster,FRONT,Reaver Arm,25,"16""","32""",—,-1,3,8,Shieldbane (Draining),10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Macro-Gatling Blaster,FRONT,Reaver Arm,30,"8""","24""",+1,—,6,7,Ordnance,10,3+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Melta Cannon,FRONT,Reaver Arm,35,"12""","24""",—,—,1,11,"Blast 3"", Fusion",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Mori Quake Cannon,FRONT,Reaver Arm,20,"24""","72""",-1,—,1,9,"Blast 5"", Concussive, Quake",10,3+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Reaver Titan Chainfist,FRONT,Reaver Arm,20,"2""",—,+2,—,3,8,"Melee, Rending",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Reaver Titan Power Fist,FRONT,Reaver Arm,20,"2""",—,+1,—,2,9,"Concussive, Melee",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Turbo Laser Destructor,OMNI,Reaver Carapace,20,"18""","32""",—,—,2,8,"Carapace, Shieldbane (Draining)",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Volcano Cannon,FRONT,Reaver Arm,25,"30""","60""",—,—,1,10,"Blast 3"", Draining",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Volkite Eradicator,OMNI,Reaver Carapace,20,"12""","20""",—,-1,3,5,"Voidbreaker (2), Beam (2) {Draining}",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Vulcan Megabolter,OMNI,Reaver Carapace,10,"8""","20""",+1,—,6,4,"Carapace, Rapid",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Reaver,Warp Missile Support Rack,OMNI,Reaver Carapace,10,"20""","80""",+1,+2,1,X,"Carapace, Limited, Warp",10,4+,"11-14: Detonation (Body, S7)","15+: Detonation (Body, S9)",1
-Dire Wolf,Ardex Defensor Mega-Bolter,FRONT,Dire Wolf Torso,10,"10""","20""",—,—,6,4,"Paired, Rapid",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Dire Wolf,Conversion Beam Dissipator,CORRIDOR,Dire Wolf Carapace,35,"15""","40""",—,—,2,9/11*,"Draining (long), Maximal Fire (long), Carapace",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Dire Wolf,Neutron Laser,CORRIDOR,Dire Wolf Carapace,45,"30""","60""",+1,—,1,7,"Bypass, Carapace, Draining, Shock",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Dire Wolf,Volcano Cannon,CORRIDOR,Dire Wolf Carapace,25,"30""","60""",—,—,1,10,"Blast 3"", Draining",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Conversion Beam Dissolutor,FRONT,Warhound Arm,25,"20""","40""",—,—,2,9/11*,Draining (long),9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Graviton Destructor,FRONT,Warhound Arm,20,"18""","38""",—,—,1,9,"Concussive, Rending",9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Incisor Melta Lance,FRONT,Warhound Arm,25,"6""","10""",—,-1,2,9,Fusion,9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Inferno Gun,FRONT,Warhound Arm,20,T,—,—,—,3,7,Firestorm,9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Natrix Shock Lance,FRONT,Warhound Arm,20,"6""","10""",+1,—,1,4,"Bypass, Specialised, Shock (Draining)",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Plasma Blastgun,FRONT,Warhound Arm,30,"8""","24""",—,-1,2,8,"Blast 3"", Maximal Fire",9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Reaver,Apocalypse Missile Launcher,OMNI,Reaver Carapace,10,"30""","120""",—,+1,5,4,"Barrage, Carapace",10,4+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Conversion Beam Dissolutor,OMNI,Reaver Carapace,25,"20""","40""",—,—,2,9/11*,"Carapace, Draining*",10,5+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Gatling Blaster,FRONT,Reaver Arm,15,"8""","24""",+1,—,6,5,Ordnance,10,3+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Graviton Destructor,OMNI,Reaver Carapace,20,"18""","38""",—,—,1,9,"Carapace, Concussive, Rending",10,4+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Laser Blaster,FRONT,Reaver Arm,25,"16""","32""",—,-1,3,8,Shieldbane (Draining),10,4+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Melta Cannon,FRONT,Reaver Arm,35,"12""","24""",—,—,1,11,"Blast (3""), Fusion",10,4+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Reaver Titan Chainfist,FRONT,Reaver Arm,20,"2""",—,+2,—,3,8,"Melee, Rending",10,2+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Reaver Titan Power Fist,FRONT,Reaver Arm,20,"2""",—,+1,—,2,9,"Concussive, Melee",10,2+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Turbo Laser Destructor,OMNI,Reaver Carapace,20,"18""","32""",—,—,2,8,"Carapace, Shieldbane (Draining)",10,4+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Volcano Cannon,FRONT,Reaver Arm,25,"30""","60""",—,—,1,10,"Blast (3""), Draining",10,5+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Volkite Eradicator,OMNI,Reaver Carapace,20,"12""","20""",—,-1,3,5,"Carapace, Voidbreaker (2), Beam (2) (Draining)",10,2+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Vulcan Megabolter,OMNI,Reaver Carapace,10,"8""","20""",+1,—,6,4,"Carapace, Rapid",10,3+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Reaver,Warp Missile Support Rack,OMNI,Reaver Carapace,10,"20""","80""",+1,+2,1,X,"Carapace, Limited (1), Warp",10,3+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Dire Wolf,Ardex Defensor Mega-Bolter,FRONT,Dire Wolf Torso,10,"10""","20""",—,—,6,4,"Paired, Rapid",9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Dire Wolf,Conversion Beam Dissipator,FRONT,Dire Wolf Carapace,35,"15""","40""",—,—,2,9/11*,"Draining*, Maximal Fire*",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Dire Wolf,Neutron Laser,FRONT,Dire Wolf Carapace,45,"30""","60""",+1,—,1,7,"Bypass, Carapace, Draining, Shock",10,4+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Dire Wolf,Volcano Cannon,FRONT,Dire Wolf Carapace,25,"30""","60""",+1,—,1,10,"Blast (3""), Carapace, Draining",10,4+,"10-13: Detonation (Body, S7)","14+: Detonation (Body, S9)",1
+Warhound,Conversion Beam Dissolutor,FRONT,Warhound Arm,25,"20""","40""",—,—,2,9/11*,Draining*,9,5+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Graviton Destructor,FRONT,Warhound Arm,20,"18""","38""",—,—,1,9,"Concussive, Rending",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Incisor Pattern Melta Lance,FRONT,Warhound Arm,25,"6""","10""",—,-1,2,9,Fusion,9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Inferno Gun,FRONT,Warhound Arm,20,T,—,—,—,3,7,Firestorm,9,2+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Natrix Shock Lance,FRONT,Warhound Arm,20,"6""","10""",+1,—,1,4,"Bypass, Specialised, Shock (Draining)",9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Plasma Blastgun,FRONT,Warhound Arm,30,"8""","24""",—,-1,2,8,"Blast (3""), Maximal Fire",9,5+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
 Warhound,Shudder Missiles,FRONT,Warhound Arm,20,"12""","40""",—,—,2,6,"Barrage, Quake",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Swarmer Missiles,FRONT,Warhound Arm,10,"12""","40""",-1,—,5,4,Rapid,9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Turbo Laser Destructor,FRONT,Warhound Arm,20,"16""","32""",—,—,2,8,Shieldbane (Draining),9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Ursus Claw,FRONT,Warhound Arm,10,"8""","12""",—,—,1,4,"Impale, Specialised",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
-Warhound,Volkite Eradicator,FRONT,Warhound Arm,20,"12""","20""",—,-1,3,5,"Voidbreaker (2), Beam (2) {Draining}",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Swarmer Missiles,FRONT,Warhound Arm,10,"12""","40""",-1,—,5,4,Rapid,9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Turbo Laser Destructor,FRONT,Warhound Arm,20,"16""","32""",—,—,2,8,Shieldbane (Draining),9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Ursus Claw,FRONT,Warhound Arm,10,"8""","12""",—,—,1,3,"Impale, Specialised",9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
+Warhound,Volkite Eradicator,FRONT,Warhound Arm,20,"12""","20""",—,-1,3,5,"Voidbreaker (2), Beam (2) (Draining)",9,4+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
 Warhound,Vulcan Mega-Bolter,FRONT,Warhound Arm,10,"8""","20""",+1,—,6,4,Rapid,9,3+,"9-12: Detonation (Body, S7)","13+: Detonation (Body, S9)",1
