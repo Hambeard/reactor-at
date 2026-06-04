@@ -99,25 +99,6 @@ function arcGlyph(arc, cx, cy, idx) {
   return { grads, body: shape + label };
 }
 
-// Range-gated traits: a trait tagged "(long)" / "(short)" only applies at that
-// range (e.g. conversion beams gain Draining at long range). We strip the tag,
-// mark the trait with "*", and flag which range row should read "Long*"/"Short*".
-// The starred range label is the on-card key: everything starred (incl. the
-// higher half of a "9/11*" strength) applies only at that range.
-function gatedTraits(traits) {
-  let long = false, short = false;
-  const display = String(traits || "")
-    .split(/,\s*/)
-    .map((t) => {
-      if (/\(long\)/i.test(t))  { long = true;  return t.replace(/\s*\(long\)/i, "").trim() + "*"; }
-      if (/\(short\)/i.test(t)) { short = true; return t.replace(/\s*\(short\)/i, "").trim() + "*"; }
-      return t.trim();
-    })
-    .filter(Boolean)
-    .join(", ");
-  return { display, long, short };
-}
-
 function bg(art, clipId) {
   return `<image href="${art}" x="0" y="0" width="${W}" height="${H}" preserveAspectRatio="xMidYMid slice" clip-path="url(#${clipId})"/>`;
 }
@@ -134,8 +115,16 @@ export function blueCardSVG(w, art, idx) {
   const rngHdrX = (c.L + c.div1) / 2, accHdrX = (c.div1 + c.R) / 2;
   const diceHdrX = (c.L + c.div2) / 2, strHdrX = (c.div2 + c.R) / 2;
 
-  const gt = gatedTraits(w.traits);
-  const traitsFit = fitText("Traits: " + gt.display, W - 2 * PAD, 8, 8, 3);
+  // Range-gating key: a "*" on a range VALUE (e.g. 50"*) means the starred
+  // traits / strength half apply only at that range. We move the "*" onto the
+  // range LABEL ("Long*"/"Short*") as the on-card key, and strip it from the
+  // value. Trait & strength asterisks stay put (those are the starred items).
+  const shortStar = /\*/.test(w.sRange || "");
+  const longStar  = /\*/.test(w.lRange || "");
+  const sRangeDisp = String(w.sRange ?? "").replace(/\*/g, "");
+  const lRangeDisp = String(w.lRange ?? "").replace(/\*/g, "");
+
+  const traitsFit = fitText("Traits: " + w.traits, W - 2 * PAD, 8, 8, 3);
   const traitsLines = traitsFit.lines.map((s, i) => {
     const y = 486 + i * (ptU(8) * 1.2);
     if (i === 0) {
@@ -169,11 +158,11 @@ export function blueCardSVG(w, art, idx) {
     ${T(accHdrX, 255, "ACC.", { size: 7, opacity: 0.8, ls: -0.6 })}
     ${hline(262)}
     ${vline(c.div1, 245, 329)}
-    ${T(c.label, 287, "Short" + (gt.short ? "*" : ""), { size: 8, anchor: "start", weight: 400 })}
-    ${T(c.rngV, 287, w.sRange, { size: 8 })}
+    ${T(c.label, 287, "Short" + (shortStar ? "*" : ""), { size: 8, anchor: "start", weight: 400 })}
+    ${T(c.rngV, 287, sRangeDisp, { size: 8 })}
     ${T(c.acc, 287, w.sAcc, { size: 8 })}
-    ${T(c.label, 313, "Long" + (gt.long ? "*" : ""), { size: 8, anchor: "start", weight: 400 })}
-    ${T(c.rngV, 313, w.lRange, { size: 8 })}
+    ${T(c.label, 313, "Long" + (longStar ? "*" : ""), { size: 8, anchor: "start", weight: 400 })}
+    ${T(c.rngV, 313, lRangeDisp, { size: 8 })}
     ${T(c.acc, 313, w.lAcc, { size: 8 })}
 
     <!-- Dice / Strength (below card middle; gap between tables centred on y=325) -->
