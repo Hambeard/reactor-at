@@ -146,7 +146,11 @@ export async function exportPdf({ weapons, artActive, artDisabled, showDisabledT
       // section-local index: reds (i >= splitAt) restart their own page layout
       const local = i < splitAt ? i : i - splitAt;
       if (i > 0 && local % PER === 0) doc.addPage();   // new page on fill OR at the blue->red split
-      const slot = local % PER, r = Math.floor(slot / COLS), col = slot % COLS;
+      const slot = local % PER, r = Math.floor(slot / COLS);
+      // Duplex: the red (back) section mirrors columns L<->R so each Disabled
+      // card lands behind its Active card after a long-edge flip.
+      const isBack = i >= splitAt;
+      const col = isBack ? (COLS - 1 - (slot % COLS)) : (slot % COLS);
       const x = MX + col * CW, y = MY + r * CH;
       doc.addImage(pngs[j], "PNG", x, y, CW, CH);
       cropMarks(doc, x, y);
