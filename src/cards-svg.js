@@ -146,7 +146,6 @@ export function blueCardSVG(w, art, idx) {
       ${arc.grads}
     </defs>
     ${bg(art, clipId)}
-    <rect x="10" y="10" width="${W-20}" height="${H-20}" rx="10" fill="none" stroke="rgba(78,205,196,0.55)" stroke-width="1.2"/>
 
     ${T(PAD, 48, w.mount.toUpperCase(), { size: 7, anchor: "start", opacity: 0.85, ls: -1 })}
     ${T(W - PAD, 48, w.pts + " POINTS", { size: 7, anchor: "end", opacity: 0.85, ls: -1 })}
@@ -194,7 +193,6 @@ export function redCardSVG(w, art, idx, showDisabledText = true) {
   return `<svg class="card-svg red" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
     <defs><clipPath id="${clipId}"><rect x="0" y="0" width="${W}" height="${H}" rx="15"/></clipPath></defs>
     ${bg(art, clipId)}
-    <rect x="10" y="10" width="${W-20}" height="${H-20}" rx="10" fill="none" stroke="rgba(192,57,43,0.5)" stroke-width="1.2"/>
 
     ${T(W / 2, 44, w.mount.toUpperCase(), { size: 7, fill: cream, opacity: 0.85, ls: -1, filter: "url(#glow-red)" })}
     ${nameBlock(name, W / 2, 122, cream, "url(#glow-red)")}

@@ -1,6 +1,6 @@
 // Service worker: offline app shell. Bump CACHE when any listed asset changes
 // so clients fetch fresh copies (old caches are purged on activate).
-const CACHE = "at-cards-v6";
+const CACHE = "at-cards-v7";
 
 // Paths are relative to the SW scope (the directory this file is served from),
 // so the app works under a sub-path like https://user.github.io/repo/.
@@ -21,8 +21,8 @@ const ASSETS = [
   "./src/vendor/svg2pdf.umd.min.js",
   "./src/vendor/courier-prime-400.woff2",
   "./src/vendor/courier-prime-700.woff2",
-  "./art/card-blue.svg",
-  "./art/card-red.svg",
+  "./art/blue-alt.png",
+  "./art/red-alt.png",
 ];
 
 self.addEventListener("install", (e) => {

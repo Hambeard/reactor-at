@@ -9,8 +9,8 @@ const STORE = "art";
 export const SLOTS = ["active", "disabled"];
 
 export const FALLBACK = {
-  active: "art/card-blue.svg",
-  disabled: "art/card-red.svg",
+  active: "art/blue-alt.png",
+  disabled: "art/red-alt.png",
 };
 
 // Recommended print resolution at 45x65mm trim (~300dpi minimum).
