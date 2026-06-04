@@ -2,27 +2,21 @@
 .DS_Store
 *.swp
 
+# Per-machine local config (not for the repo)
+.claude/settings.local.json
+
 # Backups / scratch
 *.bak
 *.bak2
 *.bak3
 /tmp/
 
-# Third-party / GW source material — reference only, do NOT distribute
-adeptustitanicus_*.pdf
-Broncofishs-*.pdf
-Adeptus Titanicus 2018.txt
-AT-weapon-cards-v6.html
-
-# Raw data-extraction artifacts (large, regenerable)
-data-audit/
-
-# Original mockup PNGs (superseded by art/*.svg)
-AT-weapon-card-blue.png
-AT-weapon-card-red.png
-
-# Generated PDF exports (never commit — produced by the app)
+# Generated PDF exports (produced by the app)
 at-weapon-cards*.pdf
 
-# Source spreadsheets (working files, not used by the app)
+# Source spreadsheets
 *.numbers
+
+# Context / reference material — source data, GW/Broncofish guides, audits,
+# dev docs, data CSVs. Not part of the deployed app; kept locally only.
+context/
