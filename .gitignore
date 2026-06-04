@@ -20,3 +20,9 @@ data-audit/
 # Original mockup PNGs (superseded by art/*.svg)
 AT-weapon-card-blue.png
 AT-weapon-card-red.png
+
+# Generated PDF exports (never commit — produced by the app)
+at-weapon-cards*.pdf
+
+# Source spreadsheets (working files, not used by the app)
+*.numbers
